@@ -2,411 +2,474 @@
 	"variables": [],
 	"info": {
 		"name": "Philips Hue",
-		"_postman_id": "224cac10-ff8f-b740-53a8-b83865c80f47",
+		"_postman_id": "aad4c7ae-0fe5-996a-278b-d8dc23eb3905",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Get All Lights",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/lights",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Put Light State",
-			"request": {
-				"url": " http://{{ip}}/api/{{username}}/lights/2/state",
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"on\":true}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Light From Bridge",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/lights/6",
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Create Schedule",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/schedules/",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+			"name": "Lights",
+			"description": "APIs related to light",
+			"item": [
+				{
+					"name": "Get All Lights",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/lights",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"description\": \"\",\n    \"name\": \"Test_PR_Abhishek\",\n    \"status\": \"enabled\",\n    \"command\": {\n    \t\"method\":\"PUT\",\n        \"body\": {\"on\":true,\"bri\":1,\"xy\":[0.673,0.323]},\n        \"address\": \"/api/2-PdpiAvTDO-SQokppQHSexWlfTus68WXCcHTlkg/groups/0/action\"\n    },\n    \"time\": \"2017-03-19T14:55:00\"\n}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Edit Schedule",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/schedules/2",
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Put Light State",
+					"request": {
+						"url": " http://{{ip}}/api/{{username}}/lights/2/state",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"on\":true}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"description\": \"\",\n    \"name\": \"Test_PR_Abhishek\",\n    \"status\": \"enabled\",\n    \"command\": {\n    \t\"method\":\"PUT\",\n        \"body\": {\"on\":true,\"bri\":1,\"xy\":[0.673,0.323]},\n        \"address\": \"/api/2-PdpiAvTDO-SQokppQHSexWlfTus68WXCcHTlkg/groups/0/action\"\n    },\n    \"time\": \"2017-03-20T06:59:00\"\n}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Create Repeating Timer Schedule",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/schedules",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Delete Light From Bridge",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/lights/6",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Test Schedule\",\n\t\"description\": \"\",\n\t\"command\": {\n\t\t\"address\": \"/api/woGzR67YSFkne1GJSEjCKMKPdfCWaLSBmuMN-KeA/sensors/2/state\",\n\t\t\"method\": \"PUT\",\n\t\t\"body\": {\n\t\t\t\"status\": 1\n\t\t}\n\t},\n\t\"localtime\": \"R/PT00:00:10\",\n\t\"recycle\": false,\n\t\"status\": \"enabled\"\n}"
-				},
-				"description": ""
-			},
-			"response": []
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Get All Schedules",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/schedules",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Get Config",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/config",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Put Config",
-			"request": {
-				"url": " http://{{ip}}/api/{{username}}/config",
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"timezone\":\"Europe/London\"}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Create Group",
-			"request": {
-				"url": " http://{{ip}}/api/{{username}}/groups",
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"delete light test\", \"lights\":[\"28\", \"29\", \"31\", \"32\", \"33\", \"34\", \"35\", \"36\", \"37\", \"38\", \"39\", \"40\", \"41\", \"45\"]}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "GEt Group Details",
-			"request": {
-				"url": " http://{{ip}}/api/{{username}}/groups/0",
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"delete light test\", \"lights\":[\"28\", \"29\", \"31\", \"32\", \"33\", \"34\", \"35\", \"36\", \"37\", \"38\", \"39\", \"40\", \"41\", \"45\"]}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Groups",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/groups",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Update Group State",
-			"request": {
-				"url": " http://{{ip}}/api/{{username}}/groups/1/action",
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"xy\":[0.3, 0.3]}"
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Create Sensor",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/sensors",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+			"name": "Bridge Config",
+			"description": "Get and edit bridge config",
+			"item": [
+				{
+					"name": "Get Config",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/config",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Test Sensor\",\n    \"swversion\": \"1.0\",\n    \"modelid\": \"randomwid\",\n    \"type\": \"CLIPGenericStatus\",\n    \"uniqueid\": \"12345678\",\n    \"state\": {\"status\": 36000},\n    \"manufacturername\": \"Moldedbits\"\n}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Sensors",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/sensors",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Update Sensor State",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/sensors/2/state",
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Put Config",
+					"request": {
+						"url": " http://{{ip}}/api/{{username}}/config",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"timezone\":\"Europe/London\"}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"status\":0}"
-				},
-				"description": ""
-			},
-			"response": []
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Create Rule on Sensor State",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/rules",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+			"name": "Group",
+			"description": "Group Operations",
+			"item": [
+				{
+					"name": "Get All Groups",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/groups",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{  \"name\":\"Test Rule\",\n   \"conditions\":[\n        {\"address\":\"/sensors/2/state/status\",\"operator\":\"eq\",\"value\":\"1\"}\n   ],\n   \"actions\":[\t\n        {\"address\":\"/groups/0/action\",\"method\":\"PUT\", \"body\":{\"on\":false}}\n]}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Create Rule on Localtime",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/rules",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Get Group Details",
+					"request": {
+						"url": " http://{{ip}}/api/{{username}}/groups/0",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"delete light test\", \"lights\":[\"28\", \"29\", \"31\", \"32\", \"33\", \"34\", \"35\", \"36\", \"37\", \"38\", \"39\", \"40\", \"41\", \"45\"]}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{  \"name\":\"Test Rule\",\n   \"conditions\":[\n        {\"address\":\"/config/localtime\",\"operator\":\"in\",\"value\":\"W127/T17:25:00/T17:25:05\"}\n   ],\n   \"actions\":[\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/2\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}},\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/1\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}}\n    ]\n}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Create Scene",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/scenes",
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Create Group",
+					"request": {
+						"url": " http://{{ip}}/api/{{username}}/groups",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"delete light test\", \"lights\":[\"28\", \"29\", \"31\", \"32\", \"33\", \"34\", \"35\", \"36\", \"37\", \"38\", \"39\", \"40\", \"41\", \"45\"]}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"PR_Schedules_Test\", \"lights\":[\"1\", \"2\"], \"recycle\":false}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Scenes",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/scenes",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Update Group State",
+					"request": {
+						"url": " http://{{ip}}/api/{{username}}/groups/1/action",
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"xy\":[0.3, 0.3]}"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"PR_Schedules_Test\", \"lights\":[\"1\", \"2\"], \"recycle\":false}\n"
-				},
-				"description": ""
-			},
-			"response": []
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Edit Scene",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/scenes/381mJSoKqbbCA0u/lightstates/2",
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+			"name": "Schedule",
+			"description": "Schedule operations",
+			"item": [
+				{
+					"name": "Get All Schedules",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/schedules",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"on\":true,\"bri\":255}"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Get Scene Details",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/scenes/381mJSoKqbbCA0u/",
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Rules",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/rules",
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Create Schedule",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/schedules/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"\",\n    \"name\": \"Test_PR_Abhishek\",\n    \"status\": \"enabled\",\n    \"command\": {\n    \t\"method\":\"PUT\",\n        \"body\": {\"on\":true,\"bri\":1,\"xy\":[0.673,0.323]},\n        \"address\": \"/api/2-PdpiAvTDO-SQokppQHSexWlfTus68WXCcHTlkg/groups/0/action\"\n    },\n    \"time\": \"2017-03-19T14:55:00\"\n}\n"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"PR_Schedules_Test\", \"lights\":[\"1\", \"2\"], \"recycle\":false}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Edit Rule",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/rules/5",
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
+				{
+					"name": "Edit Schedule",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/schedules/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"\",\n    \"name\": \"Test_PR_Abhishek\",\n    \"status\": \"enabled\",\n    \"command\": {\n    \t\"method\":\"PUT\",\n        \"body\": {\"on\":true,\"bri\":1,\"xy\":[0.673,0.323]},\n        \"address\": \"/api/2-PdpiAvTDO-SQokppQHSexWlfTus68WXCcHTlkg/groups/0/action\"\n    },\n    \"time\": \"2017-03-20T06:59:00\"\n}\n"
+						},
 						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"actions\":[\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/2\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}},\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/1\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}}\n    ]}\n"
+					},
+					"response": []
 				},
-				"description": ""
-			},
-			"response": []
+				{
+					"name": "Create Repeating Timer Schedule",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/schedules",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test Schedule\",\n\t\"description\": \"\",\n\t\"command\": {\n\t\t\"address\": \"/api/woGzR67YSFkne1GJSEjCKMKPdfCWaLSBmuMN-KeA/sensors/2/state\",\n\t\t\"method\": \"PUT\",\n\t\t\"body\": {\n\t\t\t\"status\": 1\n\t\t}\n\t},\n\t\"localtime\": \"R/PT00:00:10\",\n\t\"recycle\": false,\n\t\"status\": \"enabled\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Delete Rule",
-			"request": {
-				"url": "http://{{ip}}/api/{{username}}/rules/5",
-				"method": "DELETE",
-				"header": [],
-				"body": {},
-				"description": ""
-			},
-			"response": []
+			"name": "Sensor",
+			"description": "Sensor Operations",
+			"item": [
+				{
+					"name": "Get All Sensors",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/sensors",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Sensor",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/sensors",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test Sensor\",\n    \"swversion\": \"1.0\",\n    \"modelid\": \"randomwid\",\n    \"type\": \"CLIPGenericStatus\",\n    \"uniqueid\": \"12345678\",\n    \"state\": {\"status\": 36000},\n    \"manufacturername\": \"Moldedbits\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sensor State",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/sensors/2/state",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"status\":0}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Scene",
+			"description": "Scene operations",
+			"item": [
+				{
+					"name": "Get All Scenes",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/scenes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"PR_Schedules_Test\", \"lights\":[\"1\", \"2\"], \"recycle\":false}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Scene Details",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/scenes/381mJSoKqbbCA0u/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Scene",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/scenes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"PR_Schedules_Test\", \"lights\":[\"1\", \"2\"], \"recycle\":false}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Scene",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/scenes/381mJSoKqbbCA0u/lightstates/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"on\":true,\"bri\":255}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rule",
+			"description": "Rule operations",
+			"item": [
+				{
+					"name": "Get All Rules",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/rules",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"PR_Schedules_Test\", \"lights\":[\"1\", \"2\"], \"recycle\":false}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Rule",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/rules/5",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"actions\":[\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/2\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}},\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/1\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}}\n    ]}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rule on Sensor State",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/rules",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"name\":\"Test Rule\",\n   \"conditions\":[\n        {\"address\":\"/sensors/2/state/status\",\"operator\":\"eq\",\"value\":\"1\"}\n   ],\n   \"actions\":[\t\n        {\"address\":\"/groups/0/action\",\"method\":\"PUT\", \"body\":{\"on\":false}}\n]}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Rule on Localtime",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/rules",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"name\":\"Test Rule\",\n   \"conditions\":[\n        {\"address\":\"/config/localtime\",\"operator\":\"in\",\"value\":\"W127/T17:25:00/T17:25:05\"}\n   ],\n   \"actions\":[\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/2\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}},\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/1\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}}\n    ]\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rule",
+					"request": {
+						"url": "http://{{ip}}/api/{{username}}/rules/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
