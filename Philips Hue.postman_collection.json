@@ -28,28 +28,42 @@
 				{
 					"name": "Put Light State",
 					"request": {
-						"url": " http://{{ip}}/api/{{username}}/lights/2/state",
+						"url": "http://{{ip}}/api/{{username}}/lights/:lightId/state",
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\"on\":true}"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+							{
+								"key": "lightId",
+								"value": "1",
+								"description": "integer id of the light"
+							}
+						]
 					},
 					"response": []
 				},
 				{
 					"name": "Delete Light From Bridge",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/lights/6",
+						"url": "http://{{ip}}/api/{{username}}/lights/:lightId",
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+							{
+								"key": "lightId",
+								"value": "1",
+								"description": "integer id of the light"
+							}
+						]
 					},
 					"response": []
 				}
@@ -110,14 +124,21 @@
 				{
 					"name": "Get Group Details",
 					"request": {
-						"url": " http://{{ip}}/api/{{username}}/groups/0",
+						"url": " http://{{ip}}/api/{{username}}/groups/:groupId",
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\"name\":\"delete light test\", \"lights\":[\"28\", \"29\", \"31\", \"32\", \"33\", \"34\", \"35\", \"36\", \"37\", \"38\", \"39\", \"40\", \"41\", \"45\"]}"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+							{
+								"key": "groupId",
+								"value": "1",
+								"description": "integer id of the group"
+							}
+						]
 					},
 					"response": []
 				},
@@ -138,14 +159,21 @@
 				{
 					"name": "Update Group State",
 					"request": {
-						"url": " http://{{ip}}/api/{{username}}/groups/1/action",
+						"url": " http://{{ip}}/api/{{username}}/groups/:groupId/action",
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\"xy\":[0.3, 0.3]}"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+							{
+								"key": "groupId",
+								"value": "1",
+								"description": "integer id of the group"
+							}
+						]
 					},
 					"response": []
 				}
@@ -192,7 +220,7 @@
 				{
 					"name": "Edit Schedule",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/schedules/2",
+						"url": "http://{{ip}}/api/{{username}}/schedules/:scheduleId",
 						"method": "PUT",
 						"header": [
 							{
@@ -205,7 +233,14 @@
 							"mode": "raw",
 							"raw": "{\n    \"description\": \"\",\n    \"name\": \"Test_PR_Abhishek\",\n    \"status\": \"enabled\",\n    \"command\": {\n    \t\"method\":\"PUT\",\n        \"body\": {\"on\":true,\"bri\":1,\"xy\":[0.673,0.323]},\n        \"address\": \"/api/2-PdpiAvTDO-SQokppQHSexWlfTus68WXCcHTlkg/groups/0/action\"\n    },\n    \"time\": \"2017-03-20T06:59:00\"\n}\n"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+							{
+								"key": "scheduleId",
+								"value": "1",
+								"description": "integer id of the schedule"
+							}
+						]
 					},
 					"response": []
 				},
@@ -272,7 +307,7 @@
 				{
 					"name": "Update Sensor State",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/sensors/2/state",
+						"url": "http://{{ip}}/api/{{username}}/sensors/:sensorId/state",
 						"method": "PUT",
 						"header": [
 							{
@@ -285,7 +320,14 @@
 							"mode": "raw",
 							"raw": "{\"status\":0}"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+							{
+								"key": "sensorId",
+								"value": "1",
+								"description": "integer id of the sensor"
+							}
+						]
 					},
 					"response": []
 				}
@@ -318,14 +360,21 @@
 				{
 					"name": "Get Scene Details",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/scenes/381mJSoKqbbCA0u/",
+						"url": "http://{{ip}}/api/{{username}}/scenes/:sceneId/",
 						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+						  {
+						  	"key": "sceneId",
+						  	"value": "381mJSoKqbbCA0u",
+						  	"description": "Alphanumeric identifier of the scene"
+						  }
+						]
 					},
 					"response": []
 				},
@@ -352,7 +401,7 @@
 				{
 					"name": "Edit Scene",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/scenes/381mJSoKqbbCA0u/lightstates/2",
+						"url": "http://{{ip}}/api/{{username}}/scenes/:sceneId/lightstates/:lightstateId",
 						"method": "PUT",
 						"header": [
 							{
@@ -365,7 +414,19 @@
 							"mode": "raw",
 							"raw": "{\"on\":true,\"bri\":255}"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+						  {
+						  	"key": "sceneId",
+						  	"value": "381mJSoKqbbCA0u",
+						  	"description": "Alphanumeric identifier of the scene"
+						  },
+						  {
+						  	"key": "lightstateId",
+						  	"value": "2",
+						  	"description": "integer identifier of the light state"
+						  }
+						]
 					},
 					"response": []
 				}
@@ -398,7 +459,7 @@
 				{
 					"name": "Edit Rule",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/rules/5",
+						"url": "http://{{ip}}/api/{{username}}/rules/:ruleId",
 						"method": "PUT",
 						"header": [
 							{
@@ -411,7 +472,14 @@
 							"mode": "raw",
 							"raw": "{\"actions\":[\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/2\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}},\n        {\"address\":\"/scenes/381mJSoKqbbCA0u/lightstates/1\",\"method\":\"PUT\",\"body\":{\"on\":true,\"bri\":1}}\n    ]}\n"
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+						  {
+						  	"key": "ruleId",
+						  	"value": "5",
+						  	"description": "integer identifier of the rule"
+						  }
+						]
 					},
 					"response": []
 				},
@@ -458,14 +526,21 @@
 				{
 					"name": "Delete Rule",
 					"request": {
-						"url": "http://{{ip}}/api/{{username}}/rules/5",
+						"url": "http://{{ip}}/api/{{username}}/rules/:ruleId",
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
-						"description": ""
+						"description": "",
+						"variable": [
+						  {
+						  	"key": "ruleId",
+						  	"value": "5",
+						  	"description": "integer identifier of the rule"
+						  }
+						]
 					},
 					"response": []
 				}
